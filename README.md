@@ -1,4 +1,4 @@
-<p align="center"><img src=".github/icon.svg" width="88" alt=""></p>
+<p align="center"><img src="icon.svg" width="88" alt=""></p>
 <h1 align="center">Project Directory</h1>
 <p align="center"><a href="https://projects.elijahfrost.com">projects.elijahfrost.com</a></p>
 
