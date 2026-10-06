@@ -1,6 +1,8 @@
-# Project directory
+<p align="center"><img src=".github/icon.svg" width="88" alt=""></p>
+<h1 align="center">Project Directory</h1>
+<p align="center"><a href="https://projects.elijahfrost.com">projects.elijahfrost.com</a></p>
 
-This site lists every live subdomain on `elijahfrost.com` that appears in your Cloudflare DNS (A or CNAME), excludes `www`, and always includes the apex (`elijahfrost.com`) plus this directory (`projects.elijahfrost.com`) as pinned entries. Each project is probed with `HEAD`, sitemap paths are read from `https://<subdomain>.elijahfrost.com/sitemap.xml` when present, and the UI shows a simple nested outline. Deploy a new project to a new subdomain and the directory updates on the next fetch—no manual list to maintain.
+This site lists every live subdomain on `elijahfrost.com` that appears in your Cloudflare DNS (A or CNAME), excludes `www`, and always includes the apex (`elijahfrost.com`) plus this directory (`projects.elijahfrost.com`) as pinned entries. Each project is probed with `HEAD`, sitemap paths are read from `https://<subdomain>.elijahfrost.com/sitemap.xml` when present, and the UI shows a simple nested outline. Deploy a new project to a new subdomain and the directory updates on the next fetch, with no manual list to maintain.
 
 ## Environment variables
 
