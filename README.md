@@ -9,9 +9,9 @@ This site lists every live subdomain on `elijahfrost.com` that appears in your C
 | Variable | Purpose |
 |----------|---------|
 | `CF_ZONE_ID` | Zone ID for `elijahfrost.com` (**Overview** in Cloudflare). |
-| `CF_API_TOKEN` | **API token** (recommended): **Zone → Zone → Read**, **Zone → DNS → Read** (and **DNS → Edit** if you use the DNS script). Scoped to `elijahfrost.com`. Do **not** put the **Global API Key** here — it only works with Bearer API tokens. |
+| `CF_API_TOKEN` | **API token** (recommended): **Zone → Zone → Read**, **Zone → DNS → Read** (and **DNS → Edit** if you use the DNS script). Scoped to `elijahfrost.com`. Do **not** put the **Global API Key** here, since it only works with Bearer API tokens. |
 | `CF_AUTH_EMAIL` | (Optional alternative to `CF_API_TOKEN`) Your Cloudflare account email. |
-| `CF_GLOBAL_API_KEY` | (Optional) Global API Key from **My Profile → API Keys**. Use **with** `CF_AUTH_EMAIL`; leave `CF_API_TOKEN` unset when using this pair. |
+| `CF_GLOBAL_API_KEY` | (Optional) Global API Key from **My Profile → API Keys**. Use **with** `CF_AUTH_EMAIL`. Leave `CF_API_TOKEN` unset when using this pair. |
 
 Set these in Vercel (**Settings → Environment Variables**) for Production. If auth still fails, create a new [API token](https://dash.cloudflare.com/profile/api-tokens) and redeploy.
 
@@ -31,7 +31,7 @@ Point a new DNS name at your app (for example `my-app.elijahfrost.com`) as you a
 
 ## How sub-routes appear
 
-Publish a `sitemap.xml` at the root of the subdomain (`https://<sub>.elijahfrost.com/sitemap.xml`). URLs in `<loc>` become nested links; entries are filtered per the rules in the API (API routes, framework internals, static assets, and query strings are dropped).
+Publish a `sitemap.xml` at the root of the subdomain (`https://<sub>.elijahfrost.com/sitemap.xml`). URLs in `<loc>` become nested links. Entries are filtered per the rules in the API (API routes, framework internals, static assets, and query strings are dropped).
 
 ## Refresh from the UI
 
@@ -54,7 +54,7 @@ gh repo create project-directory --public --source=. --remote=origin --push
 
 ## Repository layout
 
-- `index.html`, `style.css`, `script.js` — static frontend (source of truth at repo root).
-- `functions/api/projects.js` — source for the serverless handler.
-- `public/` — filled by `npm run vercel-build` (copies the three static files); that folder is ignored by git. Vercel’s **Output Directory** is `public`.
-- `api/projects.js` — synced from `functions/api/projects.js` on each build; tracked in git so Vercel always sees `api/` in the repo.
+- `index.html`, `style.css`, `script.js`: static frontend (source of truth at repo root).
+- `functions/api/projects.js`: source for the serverless handler.
+- `public/`: filled by `npm run vercel-build` (copies the three static files). That folder is ignored by git. Vercel’s **Output Directory** is `public`.
+- `api/projects.js`: synced from `functions/api/projects.js` on each build. Tracked in git so Vercel always sees `api/` in the repo.
